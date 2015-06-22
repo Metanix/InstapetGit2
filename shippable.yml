@@ -10,7 +10,8 @@ node_js:
 
 env:
   global:
-    - OPENSHIFT_REPO=ssh://553a61fbe0b8cd40be0000a9@unabrestmobile-mreyesexamples.rhcloud.com/~/git/unabrestmobile.git/
+    - OPENSHIFT_REPO=ssh://5587780b5004460329000108@instapet2-cloudunab.rhcloud.com/~/git/instapet2.git/
+cd instapet2/
 
 before_install:
   - git remote -v | grep ^openshift || git remote add -m master openshift $OPENSHIFT_REPO
