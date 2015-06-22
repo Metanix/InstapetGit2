@@ -1,6 +1,6 @@
-# unab-first-rest-sample
+# InstaPet V2.0
 
-UNAB first REST sample
+Versión 2 de InstaPet
 
 Este proyecto es un ejemplo simple de como poder crear un proyecto basado en REST mediante el uso de NODEJS y EXPRESSJS. Construido usando KRAKENJS
 
