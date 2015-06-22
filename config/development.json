@@ -1,0 +1,35 @@
+{
+  "databaseConfig": {
+    "mongoDbUrl" : "mongodb://localhost:27017/",
+    "dbName": "unabexample"
+  },
+
+  "winstonConfig": {
+      "collection" : "logs",
+      "level" : "debug",
+      "colorize": true,
+      "safe"  : "false",
+      "dbUri" : "mongodb://localhost:27017/unabexample"
+  },
+
+  "middleware": {
+
+      "devtools": {
+          "enabled": true,
+          "priority": 35,
+          "module": {
+              "name": "kraken-devtools",
+              "arguments": [
+                  "path:./public",
+                  "path:./.build",
+                  {
+                      "copier": {
+                          "module": "kraken-devtools/plugins/copier",
+                          "files": "**/*"
+                      }
+                  }
+              ]
+          }
+      }
+  }
+}

@@ -1,0 +1,32 @@
+# Build Environment
+build_environment: Ubuntu 12.04
+
+# language setting
+language: node_js
+
+# version numbers
+node_js:
+  - "0.10"
+
+env:
+  global:
+    - OPENSHIFT_REPO=ssh://553a61fbe0b8cd40be0000a9@unabrestmobile-mreyesexamples.rhcloud.com/~/git/unabrestmobile.git/
+
+before_install:
+  - git remote -v | grep ^openshift || git remote add -m master openshift $OPENSHIFT_REPO
+
+install:
+  - npm install
+
+before_script:
+  - grunt build
+
+script:
+  - npm test
+
+after_success:
+  - . ./scripts/deploy.sh
+
+notifications:
+    email:
+        - metanix.18@gmail.com
